@@ -4,10 +4,10 @@ function loadData(){
 
     xhr.onload=function(){
         const container=document.getElementById("demo");
-        demo.innerHTML=xhr.responseText;
+         container.innerHTML=xhr.responseText;
     };
 
-    xhr.open("GET", "./data/data.txt");
+    xhr.open("GET", "./data/data.txt" );
 
     xhr.send();
 }
