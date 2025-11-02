@@ -1,12 +1,17 @@
 const getButton=document.getElementById
 ('get-button');
 const sendButton=document.getElementById
-('get-button');
+('send-button');
 
 const getData=function(){
   const xhr=new XMLHttpRequest();
   xhr.open("GET","https://jsonplaceholder.typicode.com/todos/1");
   xhr.send();
+  
+  xhr.onload=function(){
+    const result=xhr.response;
+    console.log(JSON.parse(result)); 
+  }
 };
 
 const sendData=function(){
@@ -14,5 +19,5 @@ const sendData=function(){
 };
 
 
-getButton.addEventListener("click",getDate);
-sendButton.addEventListener("click",sendDate);
+getButton.addEventListener("click",getData);
+sendButton.addEventListener("click",sendData);
